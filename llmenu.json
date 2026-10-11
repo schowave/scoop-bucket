@@ -1,0 +1,22 @@
+{
+    "version": "0.1.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/schowave/llmenu/releases/download/v0.1.0/llmenu_0.1.0_windows_amd64.zip",
+            "bin": [
+                "llmenu.exe"
+            ],
+            "hash": "b20da7fdacd5dede481815091d572977e6beb0f42f7f0ce6bfad8359fd175263"
+        },
+        "arm64": {
+            "url": "https://github.com/schowave/llmenu/releases/download/v0.1.0/llmenu_0.1.0_windows_arm64.zip",
+            "bin": [
+                "llmenu.exe"
+            ],
+            "hash": "4a51e74ec95780d2f05b657c1ef33b4f5954565bdb4a7e44e4d75590f56a107e"
+        }
+    },
+    "homepage": "https://github.com/schowave/llmenu",
+    "license": "MIT",
+    "description": "Pick LLMs from a LiteLLM gateway and wire them into Claude Code, Codex CLI, pi and opencode"
+}
