@@ -1,19 +1,19 @@
 {
-    "version": "0.10.0",
+    "version": "0.11.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/schowave/llmenu/releases/download/v0.10.0/llmenu_0.10.0_windows_amd64.zip",
+            "url": "https://github.com/schowave/llmenu/releases/download/v0.11.0/llmenu_0.11.0_windows_amd64.zip",
             "bin": [
                 "llmenu.exe"
             ],
-            "hash": "eed130f9c48afcb7f2e2129a2a5863f7d4dae54b5743c90c797744cc93272ca3"
+            "hash": "4036cc65a2e15597048f6316d043d6612b2b58a957739bf2cff682603dcdcf3d"
         },
         "arm64": {
-            "url": "https://github.com/schowave/llmenu/releases/download/v0.10.0/llmenu_0.10.0_windows_arm64.zip",
+            "url": "https://github.com/schowave/llmenu/releases/download/v0.11.0/llmenu_0.11.0_windows_arm64.zip",
             "bin": [
                 "llmenu.exe"
             ],
-            "hash": "de00abd436b84c53b817834e2608c2465f1cd481f27be463deeb959cb998507d"
+            "hash": "e3dfab87089b813c0565100e37c9df329b91c9082d931d2829c4935d22a191b4"
         }
     },
     "homepage": "https://github.com/schowave/llmenu",
