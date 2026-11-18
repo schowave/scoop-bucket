@@ -1,0 +1,49 @@
+# Workspace standard: `mise run setup` after a fresh clone, `mise run check` before every push.
+# Manifests are rewritten by llmenu's goreleaser; the checks only validate them.
+
+[tools]
+jq = "1.8.2"
+actionlint = "1.7.12"
+
+[tasks.setup]
+description = "Install all pinned tools"
+run = "mise install"
+
+[tasks."check:manifests"]
+description = "Validate every scoop manifest: valid JSON with the required keys"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+shopt -s nullglob
+manifests=(*.json)
+manifests=("${manifests[@]/renovate.json}")
+status=0
+for m in "${manifests[@]}"; do
+  [ -n "$m" ] || continue
+  # version/homepage/license/description, and url+hash either top level or for every architecture
+  if jq -e '
+      (.version | type == "string" and length > 0)
+      and (.homepage | type == "string")
+      and (.license != null)
+      and (.description | type == "string")
+      and (
+        ((.url != null) and (.hash != null))
+        or ((.architecture | type == "object") and (.architecture | length > 0)
+            and all(.architecture[]; .url != null and .hash != null))
+      )' "$m" >/dev/null; then
+    echo "ok: $m"
+  else
+    echo "invalid manifest (JSON or required scoop keys): $m" >&2
+    status=1
+  fi
+done
+exit "$status"
+'''
+
+[tasks."check:actionlint"]
+description = "Lint GitHub Actions workflows"
+run = "actionlint"
+
+[tasks.check]
+description = "Everything that must be green before a push"
+depends = ["check:manifests", "check:actionlint"]
