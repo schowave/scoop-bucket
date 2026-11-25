@@ -1,5 +1,5 @@
 {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Link picker: choose the Zen space, browser profile or browser for every link you click",
     "homepage": "https://schowave.github.io/browserdoor/",
     "license": "MIT",
@@ -9,12 +9,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/schowave/browserdoor/releases/download/windows-v0.1.0/browserdoor-0.1.0-windows-x64.zip",
-            "hash": "01e01a01b57274d6912f9a6a7236906063381e18fd7f857ed95251261dc42ee5"
+            "url": "https://github.com/schowave/browserdoor/releases/download/windows-v0.1.1/browserdoor-0.1.1-windows-x64.zip",
+            "hash": "ffcef3f12d7d82fb2579c90458a666082f2ddde32160a660766a59efe064deab"
         },
         "arm64": {
-            "url": "https://github.com/schowave/browserdoor/releases/download/windows-v0.1.0/browserdoor-0.1.0-windows-arm64.zip",
-            "hash": "06a0edd84662f29db7602078cd82701ecd0bbbfcd0eaa5ca0e3ba4ab7ad93d86"
+            "url": "https://github.com/schowave/browserdoor/releases/download/windows-v0.1.1/browserdoor-0.1.1-windows-arm64.zip",
+            "hash": "e82e85c19eb4733fecec9e8b50eb9429e14dfa6a526586d3767ee816c55c8fa6"
         }
     },
     "bin": "browserdoor.exe",
