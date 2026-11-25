@@ -1,0 +1,44 @@
+{
+    "version": "0.1.0",
+    "description": "Link picker: choose the Zen space, browser profile or browser for every link you click",
+    "homepage": "https://schowave.github.io/browserdoor/",
+    "license": "MIT",
+    "notes": [
+        "Start Browserdoor once (Start menu, or run `browserdoor`), then choose it as your default browser",
+        "in the Windows settings it opens. It starts at login from then on."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/schowave/browserdoor/releases/download/windows-v0.1.0/browserdoor-0.1.0-windows-x64.zip",
+            "hash": "01e01a01b57274d6912f9a6a7236906063381e18fd7f857ed95251261dc42ee5"
+        },
+        "arm64": {
+            "url": "https://github.com/schowave/browserdoor/releases/download/windows-v0.1.0/browserdoor-0.1.0-windows-arm64.zip",
+            "hash": "06a0edd84662f29db7602078cd82701ecd0bbbfcd0eaa5ca0e3ba4ab7ad93d86"
+        }
+    },
+    "bin": "browserdoor.exe",
+    "shortcuts": [
+        [
+            "browserdoor.exe",
+            "Browserdoor"
+        ]
+    ],
+    "uninstaller": {
+        "script": "if ($cmd -eq 'uninstall') { & \"$dir\\browserdoor.exe\" --unregister | Out-Null; Start-Sleep -Seconds 2 } else { & \"$dir\\browserdoor.exe\" --quit | Out-Null; Start-Sleep -Seconds 2 }"
+    },
+    "checkver": {
+        "url": "https://github.com/schowave/browserdoor/releases.atom",
+        "regex": "releases/tag/windows-v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/schowave/browserdoor/releases/download/windows-v$version/browserdoor-$version-windows-x64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/schowave/browserdoor/releases/download/windows-v$version/browserdoor-$version-windows-arm64.zip"
+            }
+        }
+    }
+}
